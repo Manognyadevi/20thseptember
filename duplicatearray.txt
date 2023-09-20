@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print Duplicate Numbers in Array</title>
+</head>
+<body>
+
+<h1>Print Duplicate Numbers in Array</h1>
+
+<script>
+    // Function to find and print duplicate numbers in an array
+    function findDuplicates(arr) {
+        var duplicateNumbers = {};
+        
+        for (var i = 0; i < arr.length; i++) {
+            if (duplicateNumbers[arr[i]] === undefined) {
+                duplicateNumbers[arr[i]] = 1;
+            } else {
+                duplicateNumbers[arr[i]]++;
+            }
+        }
+        
+        for (var number in duplicateNumbers) {
+            if (duplicateNumbers[number] > 1) {
+                document.write("<p>Duplicate Number: " + number + "</p>");
+            }
+        }
+    }
+
+    // Example array with duplicates
+    var array = [1, 2, 2, 3, 4, 4, 5, 6, 6, 7];
+
+    // Call the function to find and print duplicate numbers
+    findDuplicates(array);
+</script>
+
+</body>
+</html>

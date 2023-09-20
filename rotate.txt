@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Right Rotate Array</title>
+</head>
+<body>
+
+<h1>Right Rotate Array</h1>
+
+<script>
+    // Function to right rotate an array by 'k' positions
+    function rightRotateArray(arr, k) {
+        if (k <= 0 || arr.length === 0) {
+            return arr;
+        }
+        k = k % arr.length;
+        return arr.slice(-k).concat(arr.slice(0, -k));
+    }
+
+    // Example array
+    var originalArray = [1, 2, 3, 4, 5];
+
+    // Number of positions to right rotate
+    var rotateBy = 2;
+
+    // Perform the right rotation
+    var rotatedArray = rightRotateArray(originalArray, rotateBy);
+
+    // Display the result
+    document.write("<p>Original Array: " + originalArray + "</p>");
+    document.write("<p>Right Rotated Array: " + rotatedArray + "</p>");
+</script>
+
+</body>
+</html>
